@@ -1,3 +1,3 @@
-import { LoginForm } from "../../components/Form/LoginForm/indes";
+import { LoginForm } from "../../components/Form/LoginForm";
 
-export const Login=()=>(<LoginForm/>)
+export const LoginPage=()=>(<><h1>teste</h1><LoginForm/></>)

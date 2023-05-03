@@ -1,11 +1,9 @@
-import { Login } from "./Pages/Login"
+import  MainRouter  from "./routes"
 
 function App() {
-  
-
   return (
     <>
-      <Login/>
+      <MainRouter/>
     </>
   )
 }

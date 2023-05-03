@@ -1,3 +1,3 @@
-import { RegisterForm } from "../../components/RegisterForm";
+import { RegisterForm } from "../../components/Form/RegisterForm";
 
 export const RegisterPage=()=>(<RegisterForm/>)

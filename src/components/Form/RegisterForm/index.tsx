@@ -22,7 +22,7 @@ export const RegisterForm =()=>{
                 placeholder="Nome"
                 label="Nome"
                 error={errors.name}
-                /* {...register("name")} */
+                 {...register("name")} 
             />
             <Input
                 id="email"

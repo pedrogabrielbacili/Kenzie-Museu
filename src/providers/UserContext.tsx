@@ -47,7 +47,7 @@ export const UserProvider=({children}:IUserProvider)=>{
         } catch (error) {
             console.log(error)
         }finally{
-            setLoading(true)
+            setLoading(false)
         }
     }
     return(

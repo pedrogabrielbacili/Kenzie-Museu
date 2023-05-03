@@ -1,7 +1,7 @@
 import {createContext} from "react";
 import { api } from "../service/api";
 import { TloginFormValues } from "../components/Form/LoginForm/loginFormSchema";
-import { TRegisterFormValues } from "../components/RegisterForm/RegisterFormSchema";
+import { TRegisterFormValues } from "../components/Form/RegisterForm/RegisterFormSchema";
 
 interface IUserContext{
     userLogin:(formdata:TloginFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>)=>Promise<void>;

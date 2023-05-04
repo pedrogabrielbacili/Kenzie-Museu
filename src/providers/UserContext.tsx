@@ -1,13 +1,15 @@
-import {createContext, useState} from "react";
+
+import {createContext, useEffect, useState} from "react";
+
 import { api } from "../service/api";
 import { TloginFormValues } from "../components/Form/LoginForm/loginFormSchema";
 import { TRegisterFormValues } from "../components/Form/RegisterForm/RegisterFormSchema";
+import { useNavigate } from "react-router";
 
 interface IUserContext{
+    user: IUser | null;
     userLogin:(formdata:TloginFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>)=>Promise<void>;
     userRegister:(formData: TRegisterFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
-    user: IUser | null;
-    setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
 }
 interface IUser{
     name:string;
@@ -31,15 +33,44 @@ interface IUserProvider{
 
 export const UserContext=createContext({} as IUserContext)
 
-export const UserProvider=({children}:IUserProvider) =>{
 
-    const [user, setUser] = useState<IUser | null>(null)
+export const UserProvider=({children}:IUserProvider)=>{
+    const [user, setUser]=useState<IUser | null>(null);
+    const navigate=useNavigate()
+
+    useEffect(()=>{
+        const id=localStorage.getItem("@ID")
+        const token=localStorage.getItem("@TOKEN")
+        const userAutoLogin=async()=>{
+            try {
+                const {data}=await api.get<IUser>(`/users/${id}`,
+                 {
+                    headers:{
+                        Authorization:`Bearer ${token}`
+                    },
+                 });
+                 console.log(data)
+                 setUser(data)
+                navigate("/dashboard")
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        if(token && id){
+            userAutoLogin()
+        }
+    }, [])
+
+
     
     const userLogin=async(formData:TloginFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>)=>{
         try {
             setLoading(true)
-            const response=await api.post<IUserLogin>("/login", formData);
-            console.log(response)
+            const {data}=await api.post<IUserLogin>("/login", formData);
+            localStorage.setItem("@TOKEN", data.accessToken);
+            localStorage.setItem("@ID", JSON.stringify(data.user.id));
+            setUser(data.user)
+            navigate("/dashboard")
         } catch (error) {
             console.error(error)
         }finally{
@@ -58,7 +89,9 @@ export const UserProvider=({children}:IUserProvider) =>{
         }
     }
     return(
-        <UserContext.Provider value={{user, setUser, userLogin, userRegister}}>
+
+        <UserContext.Provider value={{userLogin, userRegister, user}}>
+
             {children}
         </UserContext.Provider>
     )

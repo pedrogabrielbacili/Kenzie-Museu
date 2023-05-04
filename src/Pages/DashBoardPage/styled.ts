@@ -20,12 +20,12 @@ export const StylesCardArts=styled.div`
             flex-direction: column ;
             width: 13.75rem;
             height: 100%;
-            height: 20.75rem;
+            height: 20rem;
             border-radius:.5rem;
             background-color: #3B3B3B;
             padding: .7rem;
             text-align: center;
-            gap: .3rem;
+            gap: .5rem;
             margin-top:1.5rem;
             box-sizing: border-box;
             cursor: pointer;
@@ -33,16 +33,17 @@ export const StylesCardArts=styled.div`
             img{
                 width: 12.375rem;
                 height: 15.1506rem;
-                border-radius:.625rem;    
+                border-radius:.625rem;
             }
 
             p{
-                font-size: 1.125rem;
+                font-size: 1rem;
+                font-weight: 600;
                 color: #D3B98C;
             }
 
             span{
-                font-size: 1rem;
+                font-size: .875rem;
                 color: #9F9F9F;
             }
         }

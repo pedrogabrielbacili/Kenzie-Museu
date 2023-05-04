@@ -6,6 +6,7 @@ import { DashBoardPage } from "./Pages/DashBoardPage";
 
 import { ProtectRoutes } from "./components/ProtectRoutes";
 import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
+import { NotFoundPage } from "./Pages/NotFound/index.tsx";
 
  const MainRouter=()=>(
     <Routes>
@@ -17,7 +18,7 @@ import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
             <Route element={<ProtectRoutes/>}>
                 <Route path="/dashboard" element={<DashBoardPage/>}/>
             </Route>
-            <Route path="*" element={<h1>pagina nao encontrada</h1>}/>
+            <Route path="*" element={<NotFoundPage/>}/>
 
     </Routes>
 )

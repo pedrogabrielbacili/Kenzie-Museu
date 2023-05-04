@@ -27,23 +27,28 @@ export const HomePage = () => {
     <>
       <Header />
       <StyledMain>
-        <div>
-          <img src={HomeBigImg} />
+        <div className="container">
+          <div className="show-img">
+            <img src={HomeBigImg} />
+          </div>
+          <StyledDivButtons className="flex-column">
+            <h1>
+              <span className="welcome">Bem vindo ao</span> Metropolitan New York
+              Museum
+            </h1>
+            <StyledLoginButton onClick={loginRedirect}>Login</StyledLoginButton>
+            <span>Não possui uma conta?</span>
+            <StyledRegisterButton onClick={registerRedirect}>
+              Cadastre-se
+            </StyledRegisterButton>
+            <StyledDivSmallImg>
+              <img src={africa700} />
+              <img src={asianArt} />
+              <img src={americanwing} />
+              <img src={HomePreviewImg} />
+            </StyledDivSmallImg>
+          </StyledDivButtons>
         </div>
-        <StyledDivButtons>
-          <h1>Bem vindo ao Metropolitan New York Museum</h1>
-          <StyledLoginButton onClick={loginRedirect}>Login</StyledLoginButton>
-          <span>Não possui uma conta?</span>
-          <StyledRegisterButton onClick={registerRedirect}>
-            Cadastre-se
-          </StyledRegisterButton>
-          <StyledDivSmallImg>
-            <img src={africa700} />
-            <img src={asianArt} />
-            <img src={americanwing} />
-            <img src={HomePreviewImg} />
-          </StyledDivSmallImg>
-        </StyledDivButtons>
       </StyledMain>
     </>
   );

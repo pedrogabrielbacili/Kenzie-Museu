@@ -1,19 +1,30 @@
 import { useNavigate } from "react-router-dom"
 import { Search } from "./Search"
+import { StyleHeaderDashboard } from "./styled"
+import out from"../../assets/out.svg"
+import start from"../../assets/star.svg"
 
-export const Header=()=>{
+
+export const StyleHeaderDashbaord = () => {
     const navigate=useNavigate()
+    
    const Logout=()=>{
     localStorage.removeItem("@TOKEN")
     localStorage.removeItem("@ID")
     navigate("/")
    }
     return(
-        <div>
-            <h1>Kenzie Museu</h1>
-            <Search/>
-            <button onClick={Logout}>Sair</button>
-            <button>Lista de favorito</button>
-        </div>
+        <StyleHeaderDashboard>
+            <nav>
+                <h2>Kenzie Museu</h2>
+                <div>
+                    <Search/>
+                    <div>
+                        <img className="iconFavorite" src={start} alt="Favoritos" />
+                        <img className="iconExit" src={out} alt="Sair" onClick={Logout}/>
+                    </div>
+                </div>
+            </nav>
+        </StyleHeaderDashboard>
     )
 }

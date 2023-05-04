@@ -15,13 +15,13 @@ import { InfoArtPage } from "./Pages/InfoArtsPage/index.tsx";
             <Route path="/" element={<HomePage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
-
+            
             <Route element={<ProtectRoutes/>}>
                 <Route path= "/art/:id" element ={ <InfoArtPage/>}/>
                 <Route path="/dashboard" element={<DashBoardPage/>}/>
             </Route>
-            <Route path="*" element={<NotFoundPage/>}/>
 
+            <Route path="*" element={<NotFoundPage/>}/>
     </Routes>
 )
 export default MainRouter

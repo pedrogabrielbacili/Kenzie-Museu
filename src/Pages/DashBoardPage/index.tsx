@@ -1,15 +1,15 @@
 import { ListArts } from "../../components/Form/ListArts"
-import { Header } from "../../components/HeaderDashBoard"
+import { StyleHeaderDashbaord } from "../../components/HeaderDashBoard"
 import { StylesCardArts } from "./styled"
 
 export const DashBoardPage=()=>{
 
     return (
         <div>
-        <Header/>
-        <StylesCardArts>
-            <ListArts/>
-        </StylesCardArts>
+            <StyleHeaderDashbaord/>
+            <StylesCardArts>
+                <ListArts/>
+            </StylesCardArts>
         </div>
     )
 }

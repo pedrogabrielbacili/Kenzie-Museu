@@ -11,9 +11,10 @@ export const CardArts=({img,title, artist, id }:ICardProps)=>{
         <li key={id}>
             <Link to={`/art/${id}`}>
             <img src={img} alt={title} />
-            <p>{title}</p>
-            <span>{artist}</span>
-            </Link>
+
+            <p>{title.slice(0, 20)}</p>
+            <span>{artist.slice(0, 25)}...</span>
+
         </li>
     )
 }

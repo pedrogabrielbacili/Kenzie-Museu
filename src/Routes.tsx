@@ -7,7 +7,6 @@ import { DashBoardPage } from "./Pages/DashBoardPage";
 import { ProtectRoutes } from "./components/ProtectRoutes";
 import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
 import { NotFoundPage } from "./Pages/NotFound/index.tsx";
-import { InfoArtsPage } from "./Pages/InfoArtsPage/index.tsx";
 
  const MainRouter=()=>(
     <Routes>

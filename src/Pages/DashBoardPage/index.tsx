@@ -1,9 +1,12 @@
 import { ListArts } from "../../components/Form/ListArts"
+import { Header } from "../../components/Header"
 
 export const DashBoardPage=()=>{
 
     return (
-        
-        <ListArts/>
+        <div>
+            <Header/>
+            <ListArts/>
+        </div>
     )
 }

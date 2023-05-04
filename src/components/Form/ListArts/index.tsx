@@ -3,10 +3,10 @@ import { CardContext } from "../../../providers/CardContext"
 import {CardArts} from "./CardArts"
 
 export const ListArts=()=>{
-    const {cardsList}=useContext(CardContext)
+    const {filterCardsArt}=useContext(CardContext)
     return(
             <ul>
-                {cardsList.map((card)=>{
+                {filterCardsArt.map((card)=>{
                     return(
                         <CardArts 
                             key={card.id}

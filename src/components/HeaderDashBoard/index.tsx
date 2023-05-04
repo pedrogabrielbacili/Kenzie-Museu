@@ -4,6 +4,8 @@ import { Search } from "./Search"
 export const Header=()=>{
     const navigate=useNavigate()
    const Logout=()=>{
+    localStorage.removeItem("@TOKEN")
+    localStorage.removeItem("@ID")
     navigate("/")
    }
     return(

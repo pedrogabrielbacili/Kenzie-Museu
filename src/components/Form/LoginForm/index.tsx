@@ -7,11 +7,12 @@ import { TloginFormValues, loginFormSchema } from "./loginFormSchema";
 import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
 import { useNavigate } from "react-router";
+import { Loading } from "../../../styles/loading";
 
 export const LoginForm = () => {
   const { userLogin } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
-
+  
   const navigate=useNavigate()
 
   const {
@@ -44,7 +45,7 @@ export const LoginForm = () => {
           {...register("password")}
         />
         <button type="submit" disabled={loading}>
-          {loading ? "Logando..." : "Login"}
+          {loading ? <Loading/> : "Login"}
         </button>
         <span>ou</span>
         <button onClick={()=>navigate("/register")}>Cadastra-se</button>

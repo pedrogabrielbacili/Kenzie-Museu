@@ -3,6 +3,7 @@ import { LoginPage } from "./Pages/Login/index";
 import {  RegisterPage } from "./Pages/Register/index";
 import { HomePage } from "./Pages/HomePage/index";
 import { DashBoardPage } from "./Pages/DashBoardPage";
+
 import { ProtectRoutes } from "./components/ProtectRoutes";
 import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
 
@@ -17,6 +18,4 @@ import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
                 <Route path="/dashboard" element={<DashBoardPage/>}/>
             </Route>
             <Route path="*" element={<h1>pagina nao encontrada</h1>}/>
-    </Routes>
-)
-export default MainRouter;
+

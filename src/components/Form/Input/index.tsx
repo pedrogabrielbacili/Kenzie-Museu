@@ -1,5 +1,6 @@
 import { forwardRef, InputHTMLAttributes, ForwardedRef } from "react"
 import {FieldError} from "react-hook-form"
+import { StyledParagrapherError } from "../../../styles/styledError";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
     id?:string;
@@ -13,7 +14,7 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
             <div>
                     {label ? <label htmlFor={id}>{label}</label>:null}
                     <input placeholder={placeholder} id={id} ref={ref} {...rest}/>
-                    {error?<p>{error.message}</p>:null}
+                    {error?<StyledParagrapherError>{error.message}</StyledParagrapherError>:null}
             </div>
         )   
     }

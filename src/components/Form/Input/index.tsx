@@ -15,6 +15,7 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
                     {label ? <label htmlFor={id}>{label}</label>:null}
                     <input placeholder={placeholder} id={id} ref={ref} {...rest}/>
                     {error?<StyledParagrapherError>{error.message}</StyledParagrapherError>:null}
+
             </div>
         )   
     }

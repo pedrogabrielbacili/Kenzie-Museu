@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   *{
@@ -8,6 +8,11 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     list-style: none;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1{
+    font-size: 1.875rem;
   }
 
   button{

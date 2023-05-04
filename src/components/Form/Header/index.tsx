@@ -6,9 +6,9 @@ export const Header = () => {
 
     return(
         <>
-        <StyledHeader>
-            <h1>Kenzie Museu</h1>
-        </StyledHeader>
+            <StyledHeader>
+                <h1>Kenzie Museu</h1>
+            </StyledHeader>
         </>
     )
 }

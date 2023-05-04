@@ -54,7 +54,6 @@ export const UserProvider = ({ children }: IUserProvider) => {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(data);
         setUser(data);
         navigate("/dashboard");
       } catch (error) {

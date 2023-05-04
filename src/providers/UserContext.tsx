@@ -1,4 +1,4 @@
-import {createContext} from "react";
+import {createContext, useState} from "react";
 import { api } from "../service/api";
 import { TloginFormValues } from "../components/Form/LoginForm/loginFormSchema";
 import { TRegisterFormValues } from "../components/Form/RegisterForm/RegisterFormSchema";
@@ -6,6 +6,8 @@ import { TRegisterFormValues } from "../components/Form/RegisterForm/RegisterFor
 interface IUserContext{
     userLogin:(formdata:TloginFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>)=>Promise<void>;
     userRegister:(formData: TRegisterFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
+    user: IUser | null;
+    setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
 }
 interface IUser{
     name:string;
@@ -13,20 +15,25 @@ interface IUser{
     password:string;
     id:number;
 }
+
 interface IUserLogin{
     accessToken:string;
     user:IUser;
 }
+
 interface IUserRegister{
     user:IUser
 }
+
 interface IUserProvider{
     children:React.ReactNode;
 }
 
 export const UserContext=createContext({} as IUserContext)
 
-export const UserProvider=({children}:IUserProvider)=>{
+export const UserProvider=({children}:IUserProvider) =>{
+
+    const [user, setUser] = useState<IUser | null>(null)
     
     const userLogin=async(formData:TloginFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>)=>{
         try {
@@ -51,7 +58,7 @@ export const UserProvider=({children}:IUserProvider)=>{
         }
     }
     return(
-        <UserContext.Provider value={{userLogin, userRegister}}>
+        <UserContext.Provider value={{user, setUser, userLogin, userRegister}}>
             {children}
         </UserContext.Provider>
     )

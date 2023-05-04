@@ -13,7 +13,7 @@ export const LoginForm = () => {
   const { userLogin } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
@@ -28,8 +28,13 @@ export const LoginForm = () => {
   return (
     <StyledDivForm>
       <StyledForm onSubmit={handleSubmit(submit)}>
-        <h1>Login</h1>
-        <p>Preencha os campos para realizar login</p>
+        <div className="flex flex-row align-center flex-between">
+          <header>
+            <h1>Login</h1>
+            <p>Preencha os campos para realizar login</p>
+          </header>
+          <a onClick={() => navigate("/")}>Retornar</a>
+        </div>
         <Input
           id="email"
           disabled={loading}
@@ -41,14 +46,15 @@ export const LoginForm = () => {
           id="password"
           disabled={loading}
           placeholder="Senha"
+          type="password"
           error={errors.password}
           {...register("password")}
         />
         <button type="submit" disabled={loading}>
-          {loading ? <Loading/> : "Login"}
+          {loading ? <Loading /> : "Login"}
         </button>
         <span>ou</span>
-        <button onClick={()=>navigate("/register")}>Cadastra-se</button>
+        <button onClick={() => navigate("/register")}>Cadastra-se</button>
       </StyledForm>
     </StyledDivForm>
   );

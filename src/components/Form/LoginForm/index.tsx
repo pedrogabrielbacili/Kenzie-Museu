@@ -6,6 +6,7 @@ import { UserContext } from "../../../providers/UserContext";
 import { TloginFormValues, loginFormSchema } from "./loginFormSchema";
 import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
+import { useNavigate } from "react-router";
 
 export const LoginForm = () => {
   const { userLogin } = useContext(UserContext);
@@ -44,7 +45,7 @@ export const LoginForm = () => {
           {loading ? "Logando..." : "Login"}
         </button>
         <span>ou</span>
-        <button>Cadastra-se</button>
+        <button onClick={()=>navigate("/register")}>Cadastra-se</button>
       </StyledForm>
     </StyledDivForm>
   );

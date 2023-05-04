@@ -3,16 +3,23 @@ import { LoginPage } from "./Pages/Login/index";
 import {  RegisterPage } from "./Pages/Register/index";
 import { HomePage } from "./Pages/HomePage/index";
 import { DashBoardPage } from "./Pages/DashBoardPage";
-import { CardProvider } from "./providers/CardContext";
-import { NotFoundPage } from "./Pages/NotFound";
+
+import { ProtectRoutes } from "./components/ProtectRoutes";
+import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
+import { NotFoundPage } from "./Pages/NotFound/index.tsx";
 
  const MainRouter=()=>(
     <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
-        <Route path="/register" element={<RegisterPage/>}/>
-        <Route path="*" element={<NotFoundPage /> } />
-        <Route path="/dashboard" element={<CardProvider><DashBoardPage/></CardProvider>}/>
+        <Route element={<PublicProtectRoutes/>}/>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/register" element={<RegisterPage/>}/>
+
+            <Route element={<ProtectRoutes/>}>
+                <Route path="/dashboard" element={<DashBoardPage/>}/>
+            </Route>
+            <Route path="*" element={<NotFoundPage/>}/>
+
     </Routes>
 )
-export default MainRouter;
+export default MainRouter

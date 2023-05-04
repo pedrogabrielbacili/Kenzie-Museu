@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../../providers/UserContext";
 import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
+import { useNavigate } from "react-router";
 
 export const RegisterForm = () => {
   const {
@@ -22,6 +23,8 @@ export const RegisterForm = () => {
   const submit: SubmitHandler<TRegisterFormValues> = (formData) => {
     userRegister(formData, setLoading);
   };
+
+  const navigate=useNavigate()
 
   return (
     <StyledDivForm>
@@ -53,7 +56,7 @@ export const RegisterForm = () => {
           Cadastrar
         </button>
         <span>Ou</span>
-        <button>
+        <button onClick={()=>navigate("/")}>
           Retornar
         </button>
       </StyledForm>

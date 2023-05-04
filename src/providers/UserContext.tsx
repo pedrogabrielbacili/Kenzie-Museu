@@ -10,8 +10,6 @@ interface IUserContext{
     user: IUser | null;
     userLogin:(formdata:TloginFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>)=>Promise<void>;
     userRegister:(formData: TRegisterFormValues, setLoading:React.Dispatch<React.SetStateAction<boolean>>) => Promise<void>;
-    user: IUser | null;
-    setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
 }
 interface IUser{
     name:string;

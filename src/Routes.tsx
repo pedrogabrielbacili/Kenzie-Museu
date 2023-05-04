@@ -19,3 +19,6 @@ import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
             </Route>
             <Route path="*" element={<h1>pagina nao encontrada</h1>}/>
 
+    </Routes>
+)
+export default MainRouter

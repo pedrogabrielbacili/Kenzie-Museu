@@ -1,12 +1,15 @@
 import { ListArts } from "../../components/Form/ListArts"
-import { Header } from "../../components/Header"
+import { Header } from "../../components/HeaderDashBoard"
+import { StylesCardArts } from "./styled"
 
 export const DashBoardPage=()=>{
 
     return (
         <div>
-            <Header/>
+        <Header/>
+        <StylesCardArts>
             <ListArts/>
+        </StylesCardArts>
         </div>
     )
 }

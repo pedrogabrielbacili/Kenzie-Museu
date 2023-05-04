@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledMain = styled.main`
   background-color: #4f4f4f;
-  padding: 30px 0 20px 0;
+  padding: 1.875rem 0 1.25rem 0;
 
   .show-img {
     display: none;
@@ -14,15 +14,18 @@ export const StyledMain = styled.main`
 
   h1 {
     text-align: center;
-    font-size: 1.625rem;
-    font-weight: 500;
+    font-size: var(--font-26);
     color: #ffffff;
   }
 
+  h1,
   .welcome {
-    font-size: 1.375rem;
-    color: #ae8b63;
-    font-weight: 500;
+    font-weight: var(--weight-500);
+  }
+
+  .welcome {
+    font-size: var(--font-22);
+    color: var(--primary-color);
     display: block;
   }
 
@@ -37,8 +40,8 @@ export const StyledMain = styled.main`
       justify-content: space-between;
       gap: 14px;
     }
-    h1{
-        margin-bottom: 20px;
+    h1 {
+      margin-bottom: 20px;
     }
   }
 `;

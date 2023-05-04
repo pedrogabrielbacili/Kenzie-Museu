@@ -10,12 +10,12 @@ interface ICardContex{
 interface ICardProvider{
     children:React.ReactNode;
 }
-interface ICard{
+export interface ICard{
     id:number;
     title:string;
     artist:string;
     date:string;
-    dimension:string;
+    dimensions:string;
     img:string;
 }
 
@@ -37,6 +37,8 @@ export const CardProvider =({children}:ICardProvider)=>{
         }
         cards();
     },[])
+
+
 
     return(
         <CardContext.Provider value={{cardsList, setCardsList, filterCardsArt, setFilterCardsArt}}>

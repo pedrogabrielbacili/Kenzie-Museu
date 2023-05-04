@@ -7,6 +7,7 @@ import { DashBoardPage } from "./Pages/DashBoardPage";
 import { ProtectRoutes } from "./components/ProtectRoutes";
 import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
 import { NotFoundPage } from "./Pages/NotFound/index.tsx";
+import { InfoArtPage } from "./Pages/InfoArtsPage/index.tsx";
 
  const MainRouter=()=>(
     <Routes>
@@ -14,8 +15,9 @@ import { NotFoundPage } from "./Pages/NotFound/index.tsx";
             <Route path="/" element={<HomePage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
-
+            
             <Route element={<ProtectRoutes/>}>
+                <Route path= "/art/:id" element ={ <InfoArtPage/>}/>
                 <Route path="/dashboard" element={<DashBoardPage/>}/>
             </Route>
 

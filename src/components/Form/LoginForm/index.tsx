@@ -4,35 +4,51 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../providers/UserContext";
 import { TloginFormValues, loginFormSchema } from "./loginFormSchema";
+import { StyledForm } from "../../../styles/styledForm";
+import { StyledDivForm } from "../../../styles/styledDivForms";
+import { useNavigate } from "react-router";
 
-export const LoginForm =()=>{
-    const { userLogin }=useContext(UserContext);
-    const [loading, setLoading]=useState(false)
+export const LoginForm = () => {
+  const { userLogin } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
 
-    const  {register, handleSubmit, formState:{errors}}=useForm<TloginFormValues>({resolver:zodResolver(loginFormSchema)});
+  const navigate=useNavigate()
 
-    const submit:SubmitHandler<TloginFormValues>=(formData)=>{
-        userLogin(formData, setLoading)
-    }
-    return(
-        <form onSubmit={handleSubmit(submit)}>
-            <Input 
-                id="email"
-                disabled={loading}
-                placeholder="Email"
-                label="Email"
-                error={errors.email}
-                {...register("email")}
-            />
-            <Input 
-                id="password"
-                disabled={loading}
-                placeholder="Senha"
-                label="Senha"
-                error={errors.password}
-                {...register("password")}
-            />
-            <button type="submit" disabled={loading} >{loading ? "entrando" : "entrar"}</button>
-        </form>
-    )
-}
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<TloginFormValues>({ resolver: zodResolver(loginFormSchema) });
+
+  const submit: SubmitHandler<TloginFormValues> = (formData) => {
+    userLogin(formData, setLoading);
+  };
+
+  return (
+    <StyledDivForm>
+      <StyledForm onSubmit={handleSubmit(submit)}>
+        <h1>Login</h1>
+        <p>Preencha os campos para realizar login</p>
+        <Input
+          id="email"
+          disabled={loading}
+          placeholder="Email"
+          error={errors.email}
+          {...register("email")}
+        />
+        <Input
+          id="password"
+          disabled={loading}
+          placeholder="Senha"
+          error={errors.password}
+          {...register("password")}
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? "Logando..." : "Login"}
+        </button>
+        <span>ou</span>
+        <button onClick={()=>navigate("/register")}>Cadastra-se</button>
+      </StyledForm>
+    </StyledDivForm>
+  );
+};

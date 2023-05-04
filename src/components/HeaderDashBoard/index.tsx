@@ -8,10 +8,11 @@ import start from"../../assets/star.svg"
 export const StyleHeaderDashbaord = () => {
     const navigate=useNavigate()
     
-    const Logout = () => {
-        navigate("/")
-    }
-
+   const Logout=()=>{
+    localStorage.removeItem("@TOKEN")
+    localStorage.removeItem("@ID")
+    navigate("/")
+   }
     return(
         <StyleHeaderDashboard>
             <nav>

@@ -18,6 +18,7 @@ export const RegisterForm = () => {
   const { userRegister } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
+
   const submit: SubmitHandler<TRegisterFormValues> = (formData) => {
     userRegister(formData, setLoading);
   };
@@ -59,3 +60,4 @@ export const RegisterForm = () => {
     </StyledDivForm>
   );
 };
+ 

@@ -23,4 +23,8 @@ export const GlobalStyles = createGlobalStyle`
     display: unset;
     position: unset;
   }
+  :root{
+    --toastify-color-success:  #ae8b63;
+    --toastify-color-error: #e74c3c;
+  }
 `;

@@ -11,9 +11,9 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement>{
  const Input=forwardRef(({placeholder, label, error, id, ...rest }: IInputProps, ref:ForwardedRef<HTMLInputElement>)=>{
         return(
             <div>
-                    {label ? <label htmlFor={id}>{label}</label>:null}
-                    <input placeholder={placeholder} id={id} ref={ref} {...rest}/>
-                    {error?<p>{error.message}</p>:null}
+                {label ? <label htmlFor={id}>{label}</label>:null}
+                <input placeholder={placeholder} id={id} ref={ref} {...rest}/>
+                {error?<p>{error.message}</p>:null}
             </div>
         )   
     }

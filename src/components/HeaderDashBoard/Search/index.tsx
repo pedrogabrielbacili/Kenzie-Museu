@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form"
 import Input from "../../Form/Input"
 import { useContext } from "react"
 import { CardContext } from "../../../providers/CardContext";
+import Lupa from"../../../assets/search.png"
+
 
 interface ISearch{
     search:string;
@@ -20,8 +22,10 @@ export const Search=()=>{
     }
     return(
         <form onSubmit={handleSubmit(submit)}>
-            <Input {...register("search")}/>
-            <button type="submit">Pesquisar</button>
+            <Input className="inputSearch" placeholder="Buscar" {...register("search")} />
+            <button >
+                <img src={Lupa} alt="Pesquisar" />
+            </button>
         </form>
     )
 }

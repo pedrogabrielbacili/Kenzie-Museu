@@ -43,9 +43,11 @@ export const UserProvider = ({ children }: IUserProvider) => {
   const [user, setUser] = useState<IUser | null>(null);
 
   const navigate = useNavigate();
-
+    
+  const pathName=window.location.pathname
+  
   useEffect(() => {
-    const id = localStorage.getItem("@ID");
+      const id = localStorage.getItem("@ID");
     const token = localStorage.getItem("@TOKEN");
     const userAutoLogin = async () => {
       try {
@@ -55,7 +57,7 @@ export const UserProvider = ({ children }: IUserProvider) => {
           },
         });
         setUser(data);
-        navigate("/dashboard");
+        navigate(pathName)
       } catch (error) {
         console.log(error);
       }
@@ -63,7 +65,7 @@ export const UserProvider = ({ children }: IUserProvider) => {
     if (token && id) {
       userAutoLogin();
     }
-  });
+  }, []);
 
   const userLogin = async (
     formData: TloginFormValues,

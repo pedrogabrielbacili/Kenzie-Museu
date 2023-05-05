@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
-interface ICardProps{
-    img:string;
-    title:string;
-    artist:string;
-    id:number;
+interface ICardProps {
+  img: string;
+  title: string;
+  artist: string;
+  id: number;
 }
+
 export const CardArts=({img,title, artist, id }:ICardProps)=>{
     return(
         <li key={id}>
@@ -18,3 +19,4 @@ export const CardArts=({img,title, artist, id }:ICardProps)=>{
         </li>
     )
 }
+

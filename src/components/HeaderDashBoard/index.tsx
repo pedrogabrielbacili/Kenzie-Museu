@@ -1,3 +1,4 @@
+
 import { Navigate, useNavigate } from "react-router-dom"
 import { Search } from "./Search"
 import { StyleHeaderDashboard } from "./styled"
@@ -30,3 +31,4 @@ export const StyleHeaderDashbaord = () => {
         </StyleHeaderDashboard>
     )
 }
+

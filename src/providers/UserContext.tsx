@@ -16,7 +16,7 @@ interface IUserContext {
     formData: TRegisterFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => Promise<void>;
-  setUser:React.Dispatch<React.SetStateAction<IUser | null>>;
+  setUser: React.Dispatch<React.SetStateAction<IUser | null>>;
 }
 interface IUser {
   name: string;
@@ -44,11 +44,11 @@ export const UserProvider = ({ children }: IUserProvider) => {
   const [user, setUser] = useState<IUser | null>(null);
 
   const navigate = useNavigate();
-    
-  const pathName=window.location.pathname
-  
+
+  const pathName = window.location.pathname;
+
   useEffect(() => {
-      const id = localStorage.getItem("@ID");
+    const id = localStorage.getItem("@ID");
     const token = localStorage.getItem("@TOKEN");
     const userAutoLogin = async () => {
       try {
@@ -58,7 +58,7 @@ export const UserProvider = ({ children }: IUserProvider) => {
           },
         });
         setUser(data);
-        navigate(pathName)
+        navigate(pathName);
       } catch (error) {
         console.log(error);
       }

@@ -8,6 +8,7 @@ import { ProtectRoutes } from "./components/ProtectRoutes";
 import { PublicProtectRoutes } from "./components/PublicProtectRoutes.tsx";
 import { NotFoundPage } from "./Pages/NotFound/index.tsx";
 import { InfoArtPage } from "./Pages/InfoArtsPage/index.tsx";
+import ProfilePage from "./Pages/ProfilePage/index.tsx";
 
 const MainRouter = () => (
   <Routes>
@@ -19,6 +20,7 @@ const MainRouter = () => (
     <Route element={<ProtectRoutes />}>
       <Route path="/art/:id" element={<InfoArtPage />} />
       <Route path="/dashboard" element={<DashBoardPage />} />
+      <Route path="*" element={<ProfilePage />} />
     </Route>
     <Route path="*" element={<NotFoundPage />} />
   </Routes>

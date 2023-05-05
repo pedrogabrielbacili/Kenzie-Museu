@@ -17,6 +17,17 @@ export const StyledForm = styled.form`
   background-color: rgba(0, 0, 0, 0.5);
   color: #ffffff;
 
+  a {
+    cursor: pointer;
+    background-color: #ae8b63;
+    padding: 10px;
+    border-radius: 8px;
+
+    :hover {
+      filter: brightness(110%);
+    }
+  }
+
   p {
     font-weight: 500;
     font-size: 0.875rem;
@@ -46,11 +57,14 @@ export const StyledForm = styled.form`
 
   button {
     border-radius: 8px;
-    height: 52px;
+    min-height: 52px;
     margin-top: 10px;
     font-size: 1.125rem;
     font-weight: 700;
     color: #ffffff;
+    :hover {
+      filter: brightness(110%);
+    }
   }
 
   button:first-of-type {
@@ -58,10 +72,6 @@ export const StyledForm = styled.form`
   }
   button:last-of-type {
     background-color: #30343a;
-  }
-
-  button:hover{
-    filter: brightness(110%);
   }
 
   @media (min-width: 768px) {

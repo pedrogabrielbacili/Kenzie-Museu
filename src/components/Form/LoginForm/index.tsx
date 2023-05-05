@@ -8,6 +8,7 @@ import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
 import { useNavigate } from "react-router";
 import { Loading } from "../../../styles/loading";
+import { IoEyeOutline } from "react-icons/io5"
 
 export const LoginForm = () => {
   const { userLogin } = useContext(UserContext);
@@ -15,6 +16,7 @@ export const LoginForm = () => {
 
 
   const navigate = useNavigate();
+  const [isTypePassword, setIsTypePassword]=useState(true)
 
 
   const {
@@ -37,6 +39,8 @@ export const LoginForm = () => {
           </header>
           <a onClick={() => navigate("/")}>Retornar</a>
         </div>
+
+        <div className="divStyle">
         <Input
           id="email"
           disabled={loading}
@@ -44,14 +48,23 @@ export const LoginForm = () => {
           error={errors.email}
           {...register("email")}
         />
+        </div>
+          
+        <div className="olhinho">
         <Input
-          id="password"
-          disabled={loading}
-          placeholder="Senha"
-          type="password"
-          error={errors.password}
-          {...register("password")}
-        />
+            id="password"
+            disabled={loading}
+            placeholder="Senha"
+            type={isTypePassword ? "password" : "text"}
+            {...register("password")}>
+            <button className="buttonOlhinho" type="button" onClick={()=>setIsTypePassword(!isTypePassword)}><IoEyeOutline/></button>
+          </Input>
+        </div>
+
+        <div className="error">
+        {errors.password ? <p>{errors.password.message}</p>:null}
+        </div>
+      
         <button type="submit" disabled={loading}>
           {loading ? <Loading /> : "Login"}
         </button>

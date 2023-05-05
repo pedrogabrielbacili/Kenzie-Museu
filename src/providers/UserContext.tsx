@@ -16,6 +16,7 @@ interface IUserContext {
     formData: TRegisterFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>
   ) => Promise<void>;
+  setUser:React.Dispatch<React.SetStateAction<IUser | null>>;
 }
 interface IUser {
   name: string;
@@ -120,7 +121,7 @@ export const UserProvider = ({ children }: IUserProvider) => {
     }
   };
   return (
-    <UserContext.Provider value={{ userLogin, userRegister, user }}>
+    <UserContext.Provider value={{ userLogin, userRegister, user, setUser }}>
       {children}
     </UserContext.Provider>
   );

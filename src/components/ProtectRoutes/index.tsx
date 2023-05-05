@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { UserContext } from "../../providers/UserContext"
-import { Navigate, Outlet, useNavigate } from "react-router";
+import { Navigate, Outlet} from "react-router";
 import { CardProvider } from "../../providers/CardContext";
 
 export const ProtectRoutes=()=>{

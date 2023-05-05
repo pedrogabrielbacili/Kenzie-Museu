@@ -1,17 +1,19 @@
-import { useNavigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 import { Search } from "./Search"
 import { StyleHeaderDashboard } from "./styled"
 import out from"../../assets/out.svg"
 import start from"../../assets/star.svg"
+import { UserContext } from "../../providers/UserContext"
+import { useContext } from "react"
 
 
 export const StyleHeaderDashbaord = () => {
-    const navigate=useNavigate()
+    const {setUser}=useContext(UserContext)
     
    const Logout=()=>{
     localStorage.removeItem("@TOKEN")
     localStorage.removeItem("@ID")
-    navigate("/")
+    setUser(null)
    }
     return(
         <StyleHeaderDashboard>
@@ -21,7 +23,7 @@ export const StyleHeaderDashbaord = () => {
                     <Search/>
                     <div>
                         <img className="iconFavorite" src={start} alt="Favoritos" />
-                        <img className="iconExit" src={out} alt="Sair" onClick={Logout}/>
+                        <img className="iconExit" src={out} alt="Sair" onClick={()=>Logout()}/>
                     </div>
                 </div>
             </nav>

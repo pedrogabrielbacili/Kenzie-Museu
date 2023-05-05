@@ -18,7 +18,6 @@ export const InfoArtPage = () => {
       console.log(error);
     }
   };
-  console.log(art);
   useEffect(() => {
     loadArt();
   }, [id]);

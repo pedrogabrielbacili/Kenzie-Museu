@@ -41,6 +41,7 @@ export const LoginForm = () => {
           id="password"
           disabled={loading}
           placeholder="Senha"
+          type="password"
           error={errors.password}
           {...register("password")}
         />

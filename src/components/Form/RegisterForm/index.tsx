@@ -18,6 +18,7 @@ export const RegisterForm = () => {
   });
   const { userRegister } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
+  const [isVisiblePassword, setIsVisiblePassword]=useState(false)
 
 
   const submit: SubmitHandler<TRegisterFormValues> = (formData) => {

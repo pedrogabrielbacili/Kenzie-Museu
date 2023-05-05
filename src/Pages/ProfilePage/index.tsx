@@ -11,7 +11,6 @@ const ProfilePage = () => {
     navigate("/dashboard");
   };
   const { user } = useContext(UserContext);
-  console.log(user);
 
   return (
     <>

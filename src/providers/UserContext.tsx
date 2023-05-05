@@ -5,6 +5,7 @@ import { TloginFormValues } from "../components/Form/LoginForm/loginFormSchema";
 import { TRegisterFormValues } from "../components/Form/RegisterForm/RegisterFormSchema";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { AxiosError } from "axios";
 
 interface IUserContext {
   user: IUser | null;
@@ -79,8 +80,15 @@ export const UserProvider = ({ children }: IUserProvider) => {
       localStorage.setItem("@ID", JSON.stringify(data.user.id));
       setUser(data.user);
       navigate("/dashboard");
-    } catch (error) {
-      console.error(error);
+    } catch (error:any) {
+      if (error.response?.status === 400) {
+        toast.error("Você não possui uma conta, registre-se!");
+        setTimeout(() => {
+          navigate("/register");
+        }, 3500);
+      }else{
+        toast.error("opss, algo deu errado!")
+      }
     } finally {
       setLoading(false);
     }
@@ -107,7 +115,7 @@ export const UserProvider = ({ children }: IUserProvider) => {
     } catch (error) {
       toast.error("Ops, algo deu errado!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

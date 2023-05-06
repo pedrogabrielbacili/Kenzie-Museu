@@ -20,7 +20,7 @@ export const Loading = styled.div.attrs({
     height: 15px;
     border-radius: 50%;
     border: 4px solid white;
-    border-color: rgb(48, 52, 58) transparent rgb(48, 52, 58)  transparent;
+    border-color: rgb(48, 52, 58) transparent rgb(48, 52, 58) transparent;
     animation: ${rotateAnimation} 1.2s linear infinite;
   }
 `;

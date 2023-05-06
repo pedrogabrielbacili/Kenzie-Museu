@@ -40,6 +40,7 @@ export const StyledForm = styled.form`
   h1,
   p {
     text-align: start;
+    padding: 5px 0px;
   }
 
   input {
@@ -55,16 +56,20 @@ export const StyledForm = styled.form`
     margin-top: 10px;
   }
   .divStyle{
-        width: 90%;
+        width: 100%;
         background-color: #ffffff;
         height: 52px;
-        margin-left: 21px;
         margin-top: 8px;
         border-radius: 8px;
         margin-bottom: 10px;
         input{
           margin: 0;
           width: 100%;
+        }
+        div{
+          p{
+            padding-top: .2rem;
+          }
         }
   }
   
@@ -88,17 +93,16 @@ export const StyledForm = styled.form`
     background-color: #30343a;
   }
   .olhinho{
-        width: 90%;
+        width: 100%;
         background-color: #ffffff;
         height: 52px;
-        margin-left: 21px;
         margin-top: 8px;
         border-radius: 8px;
         display: flex;
         align-items: center;
 
         div{
-          width: 95%;
+          width: 100%;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -131,7 +135,7 @@ export const StyledForm = styled.form`
     .error{
       color: #ff2817;
       font-size: 8px;
-      margin-left: 25px;
+      /* margin-left: 25px; */
     }
 
   @media (min-width: 768px) {

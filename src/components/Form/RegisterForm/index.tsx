@@ -8,7 +8,6 @@ import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
 import { useNavigate } from "react-router";
 import { IoEyeOutline } from "react-icons/io5";
-import { StyledParagrapherError } from "../../../styles/styledError";
 
 export const RegisterForm = () => {
   const {
@@ -20,15 +19,13 @@ export const RegisterForm = () => {
   });
   const { userRegister } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
-  const [isTypePassword, setIsTypePassword]=useState(true)
-
+  const [isTypePassword, setIsTypePassword] = useState(true);
 
   const submit: SubmitHandler<TRegisterFormValues> = (formData) => {
     userRegister(formData, setLoading);
   };
 
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   return (
     <StyledDivForm>
@@ -40,7 +37,7 @@ export const RegisterForm = () => {
             disabled={loading}
             placeholder="Nome"
             error={errors.name}
-            {...register("name")} 
+            {...register("name")}
           />
         </div>
         <div className="divStyle">
@@ -58,23 +55,27 @@ export const RegisterForm = () => {
             disabled={loading}
             placeholder="Senha"
             type={isTypePassword ? "password" : "text"}
-            {...register("password")}>
-            <button className="buttonOlhinho" type="button" onClick={()=>setIsTypePassword(!isTypePassword)}><IoEyeOutline/></button>
+            {...register("password")}
+          >
+            <button
+              className="buttonOlhinho"
+              type="button"
+              onClick={() => setIsTypePassword(!isTypePassword)}
+            >
+              <IoEyeOutline />
+            </button>
           </Input>
         </div>
         <div className="error">
           {errors.password ? <p>{errors.password.message}</p> : null}
         </div>
-      
+
         <button type="submit" disabled={loading}>
           Cadastrar
         </button>
         <span>Ou</span>
-        <button onClick={()=>navigate("/")}>
-          Retornar
-        </button>
+        <button onClick={() => navigate("/")}>Retornar</button>
       </StyledForm>
     </StyledDivForm>
   );
 };
- 

@@ -40,6 +40,7 @@ export const StyledForm = styled.form`
   h1,
   p {
     text-align: start;
+    padding: 5px 0px;
   }
 
   input {
@@ -54,18 +55,22 @@ export const StyledForm = styled.form`
   span {
     margin-top: 10px;
   }
-  .divStyle {
-    width: 90%;
-    background-color: #ffffff;
-    height: 52px;
-    margin-left: 21px;
-    margin-top: 8px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    input {
-      margin: 0;
-      width: 100%;
-    }
+  .divStyle{
+        width: 100%;
+        background-color: #ffffff;
+        height: 52px;
+        margin-top: 8px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        input{
+          margin: 0;
+          width: 100%;
+        }
+        div{
+          p{
+            padding-top: .2rem;
+          }
+        }
   }
 
   button {
@@ -86,29 +91,44 @@ export const StyledForm = styled.form`
   button:last-of-type {
     background-color: #30343a;
   }
-  .olhinho {
-    width: 90%;
-    background-color: #ffffff;
-    height: 52px;
-    margin-left: 21px;
-    margin-top: 8px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
 
-    div {
-      width: 95%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      input {
-        height: 40px;
-        margin-top: 0px;
-        padding: 0;
-      }
-    }
-    p {
-      margin-top: 5px;
+  .olhinho{
+        width: 100%;
+        background-color: #ffffff;
+        height: 52px;
+        margin-top: 8px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+
+        div{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          input{
+            height: 40px;
+            margin-top: 0px;
+            padding:0;
+          }
+          
+        }
+        p{
+          margin-top: 5px;
+        }
+        input:focus {
+            box-shadow: 0 0 0 0;
+            outline: 0;
+            border: none;
+            margin: 0;
+        }
+        .buttonOlhinho{
+          margin-top: 0px;
+          color: #30343a;
+          min-height: 35px;
+          background-color: #ffffff;
+        }
+
     }
     input:focus {
       box-shadow: 0 0 0 0;
@@ -116,11 +136,17 @@ export const StyledForm = styled.form`
       border: none;
       margin: 0;
     }
+
+    .error{
+      color: #ff2817;
+      font-size: 8px;
+  
     .buttonOlhinho {
       margin-top: 0px;
       color: #30343a;
       min-height: 35px;
       background-color: #ffffff;
+
     }
   }
   .olhinho:focus-within {

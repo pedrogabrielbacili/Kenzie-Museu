@@ -8,7 +8,6 @@ import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
 import { useNavigate } from "react-router";
 import { IoEyeOutline } from "react-icons/io5";
-import { StyledParagrapherError } from "../../../styles/styledError";
 
 export const RegisterForm = () => {
   const {

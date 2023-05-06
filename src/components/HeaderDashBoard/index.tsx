@@ -1,4 +1,5 @@
 
+
 import { Search } from "./Search"
 import { StyleHeaderDashboard } from "./styled"
 import out from"../../assets/out.svg"
@@ -14,6 +15,7 @@ export const StyleHeaderDashbaord = () => {
     localStorage.removeItem("@ID");
     setUser(null);
   };
+  
   return (
     <StyleHeaderDashboard>
       <nav>

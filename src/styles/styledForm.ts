@@ -69,7 +69,12 @@ export const StyledForm = styled.form`
     div {
       p {
         padding-top: 0.2rem;
+
+
+      :focus {
+        outline: 3px solid #ae8b63;
       }
+    }
     }
   }
 
@@ -80,8 +85,10 @@ export const StyledForm = styled.form`
     font-size: 1.125rem;
     font-weight: 700;
     color: #ffffff;
+    transition: 0.5s ease;
     :hover {
       filter: brightness(110%);
+      box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -97,6 +104,7 @@ export const StyledForm = styled.form`
     background-color: #ffffff;
     height: 52px;
     margin-top: 8px;
+
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -106,6 +114,7 @@ export const StyledForm = styled.form`
       display: flex;
       align-items: center;
       justify-content: center;
+
       height: 52px;
       input {
         height: 40px;
@@ -115,6 +124,7 @@ export const StyledForm = styled.form`
     }
     p {
       margin-top: 5px;
+
     }
     input:focus {
       box-shadow: 0 0 0 0;
@@ -129,16 +139,12 @@ export const StyledForm = styled.form`
       background-color: #ffffff;
     }
   }
-  input:focus {
-    box-shadow: 0 0 0 0;
-    outline: 0;
-    border: none;
-    margin: 0;
-  }
+
 
   .error {
     color: #ff2817;
     font-size: 8px;
+
 
     .buttonOlhinho {
       margin-top: 0px;
@@ -153,7 +159,6 @@ export const StyledForm = styled.form`
   .error {
     color: #ff2817;
     font-size: 8px;
-    margin-left: 25px;
   }
 
   @media (min-width: 768px) {

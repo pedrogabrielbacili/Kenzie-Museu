@@ -37,7 +37,7 @@ export const HomePage = () => {
               York Museum
             </h1>
             <StyledLoginButton onClick={loginRedirect}>Login</StyledLoginButton>
-            <span>Não possui uma conta?</span>
+            <a href="/register"><span>Não possui uma conta?</span></a>
             <StyledRegisterButton onClick={registerRedirect}>
               Cadastre-se
             </StyledRegisterButton>

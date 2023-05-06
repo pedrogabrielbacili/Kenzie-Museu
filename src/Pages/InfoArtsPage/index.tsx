@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { StyleHeaderDashbaord } from "../../components/HeaderDashBoard";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../service/api";
-import { ICard } from "../../providers/CardContext";
+import {  ICard } from "../../providers/CardContext";
 import { StyledArtDiv, StyledMain, StyledSpanBtnDiv } from "./style";
+import { HeaderInfoArts } from "../../components/HeaderInfoArts";
+
 
 export const InfoArtPage = () => {
   const { id } = useParams();
@@ -24,7 +25,7 @@ export const InfoArtPage = () => {
 
   return (
     <>
-      <StyleHeaderDashbaord />
+      <HeaderInfoArts />
       <StyledMain>
         <StyledArtDiv>
           <section>

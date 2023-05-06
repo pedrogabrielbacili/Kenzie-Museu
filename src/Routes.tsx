@@ -20,7 +20,7 @@ const MainRouter = () => (
     <Route element={<ProtectRoutes />}>
       <Route path="/art/:id" element={<InfoArtPage />} />
       <Route path="/dashboard" element={<DashBoardPage />} />
-      <Route path="*" element={<ProfilePage />} />
+      <Route path="/profile" element={<ProfilePage />} />
     </Route>
     <Route path="*" element={<NotFoundPage />} />
   </Routes>

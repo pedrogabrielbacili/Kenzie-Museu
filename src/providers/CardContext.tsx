@@ -38,6 +38,7 @@ export const CardProvider = ({ children }: ICardProvider) => {
     cards();
   }, []);
 
+
   return (
     <CardContext.Provider
       value={{ cardsList, setCardsList, filterCardsArt, setFilterCardsArt }}
@@ -46,3 +47,4 @@ export const CardProvider = ({ children }: ICardProvider) => {
     </CardContext.Provider>
   );
 };
+

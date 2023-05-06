@@ -8,16 +8,14 @@ import { StyledForm } from "../../../styles/styledForm";
 import { StyledDivForm } from "../../../styles/styledDivForms";
 import { useNavigate } from "react-router";
 import { Loading } from "../../../styles/loading";
-import { IoEyeOutline } from "react-icons/io5"
+import { IoEyeOutline } from "react-icons/io5";
 
 export const LoginForm = () => {
   const { userLogin } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
-
   const navigate = useNavigate();
-  const [isTypePassword, setIsTypePassword]=useState(true)
-
+  const [isTypePassword, setIsTypePassword] = useState(true);
 
   const {
     register,
@@ -41,30 +39,37 @@ export const LoginForm = () => {
         </div>
 
         <div className="divStyle">
-        <Input
-          id="email"
-          disabled={loading}
-          placeholder="Email"
-          error={errors.email}
-          {...register("email")}
-        />
+          <Input
+            id="email"
+            disabled={loading}
+            placeholder="Email"
+            error={errors.email}
+            {...register("email")}
+          />
         </div>
-          
+
         <div className="olhinho">
-        <Input
+          <Input
             id="password"
             disabled={loading}
             placeholder="Senha"
             type={isTypePassword ? "password" : "text"}
-            {...register("password")}>
-            <button className="buttonOlhinho" type="button" onClick={()=>setIsTypePassword(!isTypePassword)}><IoEyeOutline/></button>
+            {...register("password")}
+          >
+            <button
+              className="buttonOlhinho"
+              type="button"
+              onClick={() => setIsTypePassword(!isTypePassword)}
+            >
+              <IoEyeOutline />
+            </button>
           </Input>
         </div>
 
         <div className="error">
-        {errors.password ? <p>{errors.password.message}</p>:null}
+          {errors.password ? <p>{errors.password.message}</p> : null}
         </div>
-      
+
         <button type="submit" disabled={loading}>
           {loading ? <Loading /> : "Login"}
         </button>

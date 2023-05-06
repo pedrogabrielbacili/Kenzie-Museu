@@ -28,19 +28,25 @@ export const InfoArtPage = () => {
       <HeaderInfoArts />
       <StyledMain>
         <StyledArtDiv>
-          <div>
-            <h1>{art?.title}</h1>
-            <h2>{art?.artist}</h2>
-            <h3>date:{art?.date}</h3>
-            <StyledSpanBtnDiv>
-              <span>dimensions:{art?.dimensions}</span>
-              <button>Adicionar aos favoritos</button>
-            </StyledSpanBtnDiv>
-          </div>
-          <div>
-            {" "}
-            <img src={art?.img} />
-          </div>
+          <section>
+            <div className="divImg">
+              {" "}
+              <img src={art?.img} />
+            </div>
+            <div className="divTitle">
+              <span>Title:</span>
+              <h2>{art?.title}</h2>
+              <span>Artist/Culture:</span>
+              <h2> {art?.artist}</h2>
+              <span>Date:</span>
+              <h2>{art?.date}</h2>
+              <StyledSpanBtnDiv>
+                <span>Dimensions:</span>
+                <h4>{art?.dimensions}</h4>
+                <button>Adicionar aos favoritos</button>
+              </StyledSpanBtnDiv>
+            </div>
+          </section>
         </StyledArtDiv>
       </StyledMain>
     </>

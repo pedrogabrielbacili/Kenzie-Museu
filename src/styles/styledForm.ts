@@ -72,8 +72,7 @@ export const StyledForm = styled.form`
           }
         }
   }
-  
-  
+
   button {
     border-radius: 8px;
     min-height: 52px;
@@ -85,13 +84,14 @@ export const StyledForm = styled.form`
       filter: brightness(110%);
     }
   }
-  
+
   button:first-of-type {
     background-color: #ae8b63;
   }
   button:last-of-type {
     background-color: #30343a;
   }
+
   .olhinho{
         width: 100%;
         background-color: #ffffff;
@@ -128,15 +128,35 @@ export const StyledForm = styled.form`
           min-height: 35px;
           background-color: #ffffff;
         }
+
     }
-    .olhinho:focus-within{
-      border:3px solid #ae8b63
+    input:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+      border: none;
+      margin: 0;
     }
+
     .error{
       color: #ff2817;
       font-size: 8px;
-      /* margin-left: 25px; */
+  
+    .buttonOlhinho {
+      margin-top: 0px;
+      color: #30343a;
+      min-height: 35px;
+      background-color: #ffffff;
+
     }
+  }
+  .olhinho:focus-within {
+    border: 3px solid #ae8b63;
+  }
+  .error {
+    color: #ff2817;
+    font-size: 8px;
+    margin-left: 25px;
+  }
 
   @media (min-width: 768px) {
     max-width: 506px;

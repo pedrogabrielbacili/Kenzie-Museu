@@ -10,17 +10,13 @@ export const StyledHeader = styled.header`
 export const StyledMain = styled.main`
   color: #ffff;
   font-weight: 600;
-
   position: relative;
-
   padding: 2rem 4rem;
   .img-bg {
     position: absolute;
     top: 19vh;
-
     width: 100%;
     height: 90vh;
-
     left: -20px;
     z-index: -1;
   }
@@ -32,10 +28,8 @@ export const StyledMain = styled.main`
   .favorite-container {
     background-color: rgba(217, 217, 217, 0.15);
     height: 60vh;
-
     border-radius: 32px;
     padding: 1.5rem 3rem;
-
     p {
       margin-bottom: 2rem;
     }

@@ -55,22 +55,27 @@ export const StyledForm = styled.form`
   span {
     margin-top: 10px;
   }
-  .divStyle{
-        width: 100%;
-        background-color: #ffffff;
-        height: 52px;
-        margin-top: 8px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        input{
-          margin: 0;
-          width: 100%;
-        }
-        div{
-          p{
-            padding-top: .2rem;
-          }
-        }
+  .divStyle {
+    width: 100%;
+    background-color: #ffffff;
+    height: 52px;
+    margin-top: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    input {
+      margin: 0;
+      width: 100%;
+
+      :focus {
+        outline: 3px solid #ae8b63;
+      }
+    }
+
+    div {
+      p {
+        padding-top: 0.3rem;
+      }
+    }
   }
 
   button {
@@ -80,8 +85,10 @@ export const StyledForm = styled.form`
     font-size: 1.125rem;
     font-weight: 700;
     color: #ffffff;
+    transition: 0.5s ease;
     :hover {
       filter: brightness(110%);
+      box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -92,43 +99,25 @@ export const StyledForm = styled.form`
     background-color: #30343a;
   }
 
-  .olhinho{
-        width: 100%;
-        background-color: #ffffff;
-        height: 52px;
-        margin-top: 8px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
+  .olhinho {
+    width: 100%;
+    background-color: #ffffff;
+    height: 52px;
+    margin-top: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
 
-        div{
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          input{
-            height: 40px;
-            margin-top: 0px;
-            padding:0;
-          }
-          
-        }
-        p{
-          margin-top: 5px;
-        }
-        input:focus {
-            box-shadow: 0 0 0 0;
-            outline: 0;
-            border: none;
-            margin: 0;
-        }
-        .buttonOlhinho{
-          margin-top: 0px;
-          color: #30343a;
-          min-height: 35px;
-          background-color: #ffffff;
-        }
-
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      input {
+        height: 40px;
+        margin-top: 0px;
+        padding-left: 3px;
+      }
     }
     input:focus {
       box-shadow: 0 0 0 0;
@@ -136,17 +125,25 @@ export const StyledForm = styled.form`
       border: none;
       margin: 0;
     }
-
-    .error{
-      color: #ff2817;
-      font-size: 8px;
-  
     .buttonOlhinho {
       margin-top: 0px;
       color: #30343a;
       min-height: 35px;
       background-color: #ffffff;
+    }
+  }
 
+  .error {
+    color: #ff2817;
+    font-size: 8px;
+    width: 100%;
+
+    .buttonOlhinho {
+      margin-top: 0px;
+      color: #30343a;
+      min-height: 35px;
+      background-color: #ffffff;
+      height: 100%;
     }
   }
   .olhinho:focus-within {
@@ -155,7 +152,6 @@ export const StyledForm = styled.form`
   .error {
     color: #ff2817;
     font-size: 8px;
-    margin-left: 25px;
   }
 
   @media (min-width: 768px) {

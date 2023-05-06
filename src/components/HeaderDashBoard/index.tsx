@@ -6,13 +6,15 @@ import { UserContext } from "../../providers/UserContext";
 import { useContext } from "react";
 
 export const StyleHeaderDashbaord = () => {
-  const { setUser } = useContext(UserContext);
+
+const { setUser } = useContext(UserContext);
 
   const Logout = () => {
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@ID");
     setUser(null);
   };
+  
   return (
     <StyleHeaderDashboard>
       <nav>

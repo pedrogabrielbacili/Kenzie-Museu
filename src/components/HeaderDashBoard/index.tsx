@@ -1,13 +1,14 @@
-import { Search } from "./Search";
-import { StyleHeaderDashboard } from "./styled";
-import out from "../../assets/out.svg";
-import start from "../../assets/star.svg";
-import { UserContext } from "../../providers/UserContext";
-import { useContext } from "react";
+
+
+import { Search } from "./Search"
+import { StyleHeaderDashboard } from "./styled"
+import out from"../../assets/out.svg"
+import start from"../../assets/star.svg"
+import { UserContext } from "../../providers/UserContext"
+import { useContext } from "react"
 
 export const StyleHeaderDashbaord = () => {
-
-const { setUser } = useContext(UserContext);
+    const {setUser}=useContext(UserContext)
 
   const Logout = () => {
     localStorage.removeItem("@TOKEN");

@@ -65,16 +65,16 @@ export const StyledForm = styled.form`
     input {
       margin: 0;
       width: 100%;
+    }
+    div {
+      p {
+        padding-top: 0.2rem;
+
 
       :focus {
         outline: 3px solid #ae8b63;
       }
     }
-
-    div {
-      p {
-        padding-top: 0.3rem;
-      }
     }
   }
 
@@ -103,7 +103,8 @@ export const StyledForm = styled.form`
     width: 100%;
     background-color: #ffffff;
     height: 52px;
-    margin-top: 16px;
+    margin-top: 8px;
+
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -113,11 +114,17 @@ export const StyledForm = styled.form`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      height: 52px;
       input {
         height: 40px;
         margin-top: 0px;
-        padding-left: 3px;
+        padding: 0;
       }
+    }
+    p {
+      margin-top: 5px;
+
     }
     input:focus {
       box-shadow: 0 0 0 0;
@@ -133,17 +140,17 @@ export const StyledForm = styled.form`
     }
   }
 
+
   .error {
     color: #ff2817;
     font-size: 8px;
-    width: 100%;
+
 
     .buttonOlhinho {
       margin-top: 0px;
       color: #30343a;
       min-height: 35px;
       background-color: #ffffff;
-      height: 100%;
     }
   }
   .olhinho:focus-within {

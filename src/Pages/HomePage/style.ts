@@ -10,21 +10,24 @@ export const StyledMain = styled.main`
 
   button:hover {
     filter: brightness(120%);
+    transition: 0.5s ease;
   }
 
   h1 {
     text-align: center;
-    font-size: var(--font-26);
+    font-size: var(--font-20);
     color: #ffffff;
   }
 
   h1,
   .welcome {
     font-weight: var(--weight-500);
+    padding: 0;
   }
 
   .welcome {
-    font-size: var(--font-22);
+    font-size: var(--font-20);
+    padding-bottom: 0.5rem;
     color: var(--primary-color);
     display: block;
   }
@@ -32,16 +35,19 @@ export const StyledMain = styled.main`
   @media (min-width: 1024px) {
     .show-img {
       display: flex;
-      width: 45%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 500px;
+      }
     }
     .container {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       gap: 14px;
-    }
-    h1 {
-      margin-bottom: 20px;
+      width: 800px;
+      margin-top: 1rem;
     }
   }
 `;
@@ -49,9 +55,9 @@ export const StyledMain = styled.main`
 export const StyledDivButtons = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 8px;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 12px;
 
   .flex-column {
     display: none;
@@ -62,6 +68,9 @@ export const StyledDivButtons = styled.div`
     color: #ae8b63;
     font-size: 0.75rem;
     font-weight: 300;
+    :hover {
+      color: #ae8b12;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -92,9 +101,13 @@ export const StyledLoginButton = styled.button`
   padding: 5px;
 
   @media (min-width: 1024px) {
-    height: 70px;
     max-width: 100%;
-    margin-top: 60px;
+    margin-top: 30px;
+    max-width: 328px;
+    height: 47px;
+    :hover {
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 2.8);
+    }
   }
 `;
 
@@ -107,10 +120,14 @@ export const StyledRegisterButton = styled.button`
   color: white;
   font-size: 20px;
   padding: 5px;
+  :hover {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 2.8);
+  }
 
   @media (min-width: 1024px) {
-    height: 70px;
+    height: 47px;
     max-width: 100%;
+    max-width: 328px;
   }
 `;
 

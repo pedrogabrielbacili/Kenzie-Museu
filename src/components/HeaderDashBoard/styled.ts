@@ -51,6 +51,10 @@ export const StyleHeaderDashboard = styled.header`
       }
     }
   }
+  .iconRecord{
+    width: 30px;
+  }
+
   .iconFavorite {
     width: 1.6875rem;
     height: 1.6875rem;
@@ -61,6 +65,15 @@ export const StyleHeaderDashboard = styled.header`
     width: 1.5625rem;
     height: 1.5625rem;
     cursor: pointer;
+  }
+
+  .iconSerch{
+    width: 35px;
+    color: red;
+  }
+
+  .imgExcluir{
+    width: 30px;
   }
 
   @media (min-width: 320px) {

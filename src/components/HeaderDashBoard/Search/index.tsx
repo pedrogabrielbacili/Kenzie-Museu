@@ -3,6 +3,9 @@ import Input from "../../Form/Input";
 import { useContext } from "react";
 import { CardContext } from "../../../providers/CardContext";
 import Lupa from "../../../assets/search.png";
+import record from"../../../assets/record_voice.svg"
+import trash from"../../../assets/trash.svg"
+import searchvoice from"../..//../assets/search200.png"
 import SearchForVoice from "../../SearchForVoice";
 
 interface ISearch {
@@ -45,7 +48,7 @@ export const Search = () => {
          {hasRecognitionSupport ? (
               <>
                 <div>
-                  <button onClick={startListening}>gravar</button>
+                  <img className="iconRecord" src={record} alt="" onClick={startListening}/>
                 </div>
               </>
          ):(
@@ -63,8 +66,9 @@ export const Search = () => {
         </button>
       </form>
 
-      <button onClick={SeachVoice}>pesquisar</button>
-      <button onClick={excluir} >excluir</button>
+      <img className="iconSerch" src={searchvoice} alt="" onClick={SeachVoice} />
+      <img className="imgExcluir" src={trash} alt="" onClick={excluir}/>
+
     </>
   );
 };

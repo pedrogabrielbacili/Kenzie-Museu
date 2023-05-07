@@ -148,15 +148,14 @@ export const StyledDivSmallImg = styled.div`
   }
 
   @media (min-width: 1024px) {
-    gap: 25px;
+    gap: 2px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     max-width: 100%;
 
     img {
-      max-width: 249px;
-      max-height: 187px;
+      max-width: 200px;
       width: 100%;
       height: 100%;
     }

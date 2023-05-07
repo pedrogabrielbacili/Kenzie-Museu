@@ -29,23 +29,23 @@ export const Search = () => {
           art.artist.toLowerCase().includes(formData.search.toLowerCase())
         : cardsList
     );
-    console.log(filterArts);
     setFilterCardsArt(filterArts);
   };
-  const SeachVoice = () => {
-    const filterVoice = cardsList.filter((art) =>
-      text
-        ? art.title.toLowerCase().includes(text.toLowerCase()) ||
-          art.artist.toLowerCase().includes(text.toLowerCase())
-        : cardsList
-    );
-    console.log(filterVoice);
-    setFilterCardsArt(filterVoice);
-  };
-  const excluir = () => {
-    setFilterCardsArt(cardsList);
-    setText("");
-  };
+
+    const SeachVoice = () => {
+      const filterVoice = cardsList.filter((art) =>
+        text
+          ? art.title.toLowerCase().includes(text.toLowerCase()) ||
+            art.artist.toLowerCase().includes(text.toLowerCase()) 
+          : cardsList
+      );
+        setFilterCardsArt(filterVoice)
+    }
+    const excluir=()=>{
+      setFilterCardsArt(cardsList)
+      setText("")
+    }
+  
 
   return (
     <>

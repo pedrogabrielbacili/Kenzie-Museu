@@ -1,6 +1,7 @@
+
 import { useEffect, useState } from "react";
 
-let recognition:any =null
+let recognition:any=null
 
 if("webkitSpeechRecognition" in window){
     recognition = new webkitSpeechRecognition()
@@ -15,7 +16,7 @@ const SearchForVoice=()=>{
         if(!recognition)return;
 
         recognition.onresult=(event:SpeechRecognitionEvent)=>{
-            console.log("onresult event:", event);
+            
             setText(event.results[0][0].transcript)
             recognition.stop();          
             setIsListening(false);

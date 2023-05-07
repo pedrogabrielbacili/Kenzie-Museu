@@ -20,13 +20,12 @@ const ProfilePage = () => {
         <nav>
           <h1 className="logo">Kenzie Museu</h1>
           <button>
-            <img src={ home } alt="Ir para inicio" onClick={homeNavigate} />
+            <img src={home} alt="Ir para inicio" onClick={homeNavigate} />
           </button>
         </nav>
       </StyledHeader>
       {user ? (
         <StyledMain>
-          <img className="img-bg" src={retangle} alt="" />
           <div className="profile-container">
             <p>Bem vindo(a), {user?.name}</p>
             <p>{user?.email}</p>

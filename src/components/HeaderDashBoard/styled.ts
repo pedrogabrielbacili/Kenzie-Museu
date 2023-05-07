@@ -51,6 +51,11 @@ export const StyleHeaderDashboard = styled.header`
       }
     }
   }
+
+  .divIcons{
+    display: flex;
+  }
+
   .iconRecord{
     width: 30px;
   }

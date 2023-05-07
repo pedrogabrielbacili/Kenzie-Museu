@@ -58,6 +58,7 @@ export const StyleHeaderDashboard = styled.header`
 
   .iconRecord{
     width: 30px;
+    cursor: pointer;
   }
 
   .iconFavorite {
@@ -75,10 +76,12 @@ export const StyleHeaderDashboard = styled.header`
   .iconSerch{
     width: 35px;
     color: red;
+    cursor: pointer;
   }
 
   .imgExcluir{
     width: 30px;
+    cursor: pointer;
   }
 
   @media (min-width: 320px) {

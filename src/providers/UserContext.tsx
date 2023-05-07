@@ -5,7 +5,6 @@ import { TloginFormValues } from "../components/Form/LoginForm/loginFormSchema";
 import { TRegisterFormValues } from "../components/Form/RegisterForm/RegisterFormSchema";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { AxiosError } from "axios";
 
 interface IUserContext {
   user: IUser | null;

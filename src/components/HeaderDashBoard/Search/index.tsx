@@ -21,7 +21,6 @@ export const Search = () => {
           art.artist.toLowerCase().includes(formData.search.toLowerCase()) 
         : cardsList
     );
-    console.log(filterArts);
     setFilterCardsArt(filterArts);
   };
     const SeachVoice = () => {
@@ -31,7 +30,6 @@ export const Search = () => {
             art.artist.toLowerCase().includes(text.toLowerCase()) 
           : cardsList
       );
-        console.log(filterVoice);
         setFilterCardsArt(filterVoice)
     }
     const excluir=()=>{

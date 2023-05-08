@@ -49,9 +49,6 @@ export const InfoArtPage = () => {
             {" "}
             <img src={art?.img} />
           </div>
-
-        
-
         </StyledArtDiv>
       </StyledMain>
     </>

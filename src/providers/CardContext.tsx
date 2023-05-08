@@ -6,6 +6,9 @@ interface ICardContex {
   setCardsList: React.Dispatch<React.SetStateAction<ICard[]>>;
   setFilterCardsArt: React.Dispatch<React.SetStateAction<ICard[]>>;
   filterCardsArt: ICard[];
+  favorite: ICard[];
+  setFavorite: React.Dispatch<React.SetStateAction<ICard[]>>;
+
 }
 interface ICardProvider {
   children: React.ReactNode;
@@ -24,6 +27,8 @@ export const CardContext = createContext({} as ICardContex);
 export const CardProvider = ({ children }: ICardProvider) => {
   const [cardsList, setCardsList] = useState<ICard[]>([]);
   const [filterCardsArt, setFilterCardsArt] = useState<ICard[]>([]);
+  const [favorite, setFavorite] = useState<ICard[]>([]);
+
 
   useEffect(() => {
     const cards = async () => {
@@ -38,13 +43,19 @@ export const CardProvider = ({ children }: ICardProvider) => {
     cards();
   }, []);
 
-
   return (
     <CardContext.Provider
-      value={{ cardsList, setCardsList, filterCardsArt, setFilterCardsArt }}
+      value={{
+        cardsList,
+        setCardsList,
+        filterCardsArt,
+        setFilterCardsArt,
+        favorite,
+        setFavorite,
+      }}
+
     >
       {children}
     </CardContext.Provider>
   );
 };
-

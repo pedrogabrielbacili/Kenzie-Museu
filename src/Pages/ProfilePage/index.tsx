@@ -24,6 +24,7 @@ const ProfilePage = () => {
           </button>
         </nav>
       </StyledHeader>
+      
       {user ? (
         <StyledMain>
           <div className="profile-container">

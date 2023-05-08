@@ -4,6 +4,8 @@ import homeButton from "../../assets/homeButton.png";
 import { StyledHeader, StyledMain } from "./style";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../providers/UserContext";
+import { CardContext } from "../../providers/CardContext";
+import { CardArts } from "../../components/Form/ListArts/CardArts";
 const ProfilePage = () => {
   const navigate = useNavigate();
 
@@ -11,7 +13,7 @@ const ProfilePage = () => {
     navigate("/dashboard");
   };
   const { user } = useContext(UserContext);
-  console.log(user);
+  const { favorite } = useContext(CardContext);
 
   return (
     <>
@@ -21,7 +23,7 @@ const ProfilePage = () => {
           <img src={homeButton} alt="Ir para inicio" onClick={homeNavigate} />
         </button>
       </StyledHeader>
-      {user ? (
+      {favorite.length > 0 ? (
         <StyledMain>
           <img className="img-bg" src={retangle} alt="" />
           <div className="profile-container">
@@ -38,8 +40,16 @@ const ProfilePage = () => {
           <img className="img-bg" src={retangle} alt="" />
           <div className="profile-container"></div>
           <div className="favorite-container">
-            <p>Você ainda não possuí nenhuma obra favorita</p>
-            <button onClick={homeNavigate}>Adicionar Favoritos</button>
+            <p>Minhas obras favoritas</p>
+            {favorite.map((art) => (
+              <CardArts
+                key={art.id}
+                id={art.id}
+                img={art.img}
+                title={art.title}
+                artist={art.artist}
+              />
+            ))}
           </div>
         </StyledMain>
       )}

@@ -2,13 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { StyleHeaderDashbaord } from "../../components/HeaderDashBoard";
 import { useParams } from "react-router-dom";
 import { api } from "../../service/api";
-import { ICard } from "../../providers/CardContext";
+import { CardContext, ICard } from "../../providers/CardContext";
 import { StyledArtDiv, StyledMain, StyledSpanBtnDiv } from "./style";
 
 export const InfoArtPage = () => {
   const { id } = useParams();
 
-  const [art, setArt] = useState<ICard | null>(null);
+  const [art, setArt] = useState<ICard>({} as ICard);
 
   const loadArt = async () => {
     try {
@@ -23,6 +23,12 @@ export const InfoArtPage = () => {
     loadArt();
   }, [id]);
 
+  const { setFavorite, favorite } = useContext(CardContext);
+
+  const handleClick = () => {
+    setFavorite([...favorite, art]);
+  };
+
   return (
     <>
       <StyleHeaderDashbaord />
@@ -34,7 +40,7 @@ export const InfoArtPage = () => {
             <h3>date:{art?.date}</h3>
             <StyledSpanBtnDiv>
               <span>dimensions:{art?.dimensions}</span>
-              <button>Adicionar aos favoritos</button>
+              <button onClick={handleClick}>Adicionar aos favoritos</button>
             </StyledSpanBtnDiv>
           </div>
           <div>

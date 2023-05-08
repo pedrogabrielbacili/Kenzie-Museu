@@ -33,11 +33,11 @@ export const HomePage = () => {
           </div>
           <StyledDivButtons className="flex-column">
             <h1>
-              <span className="welcome">Bem vindo ao</span> Metropolitan New York
-              Museum
+              <span className="welcome">Bem vindo ao</span> Metropolitan New
+              York Museum
             </h1>
             <StyledLoginButton onClick={loginRedirect}>Login</StyledLoginButton>
-            <span>Não possui uma conta?</span>
+            <a href="/register"><span>Não possui uma conta?</span></a>
             <StyledRegisterButton onClick={registerRedirect}>
               Cadastre-se
             </StyledRegisterButton>

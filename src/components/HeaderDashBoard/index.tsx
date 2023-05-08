@@ -1,20 +1,25 @@
-import { useNavigate } from "react-router-dom";
 import { Search } from "./Search";
 import { StyleHeaderDashboard } from "./styled";
 import out from "../../assets/out.svg";
 import start from "../../assets/star.svg";
+import { UserContext } from "../../providers/UserContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const StyleHeaderDashbaord = () => {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
+
+  const homeNavigate = () => {
+    navigate("/profile");
+  };
 
   const Logout = () => {
     localStorage.removeItem("@TOKEN");
     localStorage.removeItem("@ID");
-    navigate("/");
+    setUser(null);
   };
-  const profile = () => {
-    navigate("/profile");
-  };
+
   return (
     <StyleHeaderDashboard>
       <nav>
@@ -26,9 +31,14 @@ export const StyleHeaderDashbaord = () => {
               className="iconFavorite"
               src={start}
               alt="Favoritos"
-              onClick={profile}
+              onClick={homeNavigate}
             />
-            <img className="iconExit" src={out} alt="Sair" onClick={Logout} />
+            <img
+              className="iconExit"
+              src={out}
+              alt="Sair"
+              onClick={() => Logout()}
+            />
           </div>
         </div>
       </nav>

@@ -1,9 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import { StyleHeaderDashbaord } from "../../components/HeaderDashBoard";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../service/api";
 import { CardContext, ICard } from "../../providers/CardContext";
+
+
 import { StyledArtDiv, StyledMain, StyledSpanBtnDiv } from "./style";
+import { HeaderInfoArts } from "../../components/HeaderInfoArts";
+
 
 export const InfoArtPage = () => {
   const { id } = useParams();
@@ -18,7 +21,6 @@ export const InfoArtPage = () => {
       console.log(error);
     }
   };
-  console.log(art);
   useEffect(() => {
     loadArt();
   }, [id]);
@@ -31,9 +33,10 @@ export const InfoArtPage = () => {
 
   return (
     <>
-      <StyleHeaderDashbaord />
+      <HeaderInfoArts />
       <StyledMain>
         <StyledArtDiv>
+
           <div>
             <h1>{art?.title}</h1>
             <h2>{art?.artist}</h2>
@@ -47,6 +50,9 @@ export const InfoArtPage = () => {
             {" "}
             <img src={art?.img} />
           </div>
+
+        
+
         </StyledArtDiv>
       </StyledMain>
     </>

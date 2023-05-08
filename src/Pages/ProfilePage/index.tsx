@@ -27,9 +27,11 @@ const ProfilePage = () => {
             <img src={home} alt="Ir para inicio" onClick={homeNavigate} />
           </button>
         </nav>
-      </StyledHeader>
+
+      </StyledHeader>   
 
       {user ? (
+     
         <StyledMain>
           <div className="profile-container">
             <p>Bem vindo(a), {user?.name}</p>

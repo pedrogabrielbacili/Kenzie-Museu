@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../service/api";
 import { CardContext, ICard } from "../../providers/CardContext";
-
 
 import { StyledArtDiv, StyledMain, StyledSpanBtnDiv } from "./style";
 import { HeaderInfoArts } from "../../components/HeaderInfoArts";

@@ -27,7 +27,9 @@ const ProfilePage = () => {
             <img src={home} alt="Ir para inicio" onClick={homeNavigate} />
           </button>
         </nav>
+
       </StyledHeader>   
+
       {user ? (
      
         <StyledMain>
